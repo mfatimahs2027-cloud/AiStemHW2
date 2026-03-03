@@ -1,0 +1,563 @@
+/* ====================================
+   LAYER 1 — GLOBAL STYLES & LAYOUT
+==================================== */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY TYPOGRAPHY */
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif; /* fancy modern font */
+  background-color: #0d0b12; /* dark purple-black */
+  color: #e6e0ff; /* soft glowing purple text */
+  line-height: 1.6;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SECTION SPACING */
+.section {
+  padding: 60px 0;
+}
+
+/* BUTTONS */
+button,
+.button {
+  background: #ffffff;
+  color: #1a1a1a;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+button:hover,
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* HEADER */
+.site-header {
+  background: #15121f;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(180, 120, 255, 0.3);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo a {
+  color: #c9a8ff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* NAVIGATION */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.main-nav a {
+  color: #e6e0ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #c9a8ff;
+}
+
+/* MOBILE HEADER */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .main-nav ul {
+    gap: 15px;
+  }
+}
+
+
+/* ====================================
+   LAYER 2 — HOME PAGE STYLING
+==================================== */
+
+/* HERO SLIDER */
+.slide-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.slide {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+}
+
+.slide-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* ABOUT PREVIEW (HOME PAGE) */
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+/* SERVICES CARDS */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: #1a1625;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(180, 120, 255, 0.2);
+}
+
+/* GALLERY PREVIEW GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* CALL TO ACTION */
+.cta {
+  text-align: center;
+}
+
+.cta h2 {
+  margin-bottom: 10px;
+}
+
+
+/* ====================================
+   LAYER 3 — PAGE SPECIFIC STYLING
+==================================== */
+
+/* ABOUT PAGE — ALTERNATING LAYOUT */
+.two-column {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.two-column .col {
+  flex: 1;
+}
+
+.two-column img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .two-column {
+    flex-direction: column;
+  }
+}
+
+/* GALLERY PAGE GRID */
+.gallery-grid-section .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid-section img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.gallery-grid-section img:hover {
+  transform: scale(1.05);
+}
+
+/* CONTACT PAGE FORM */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(180, 120, 255, 0.3);
+  background: #1a1625;
+  color: #e6e0ff;
+}
+
+textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+}
+/* ====================================
+   THEME VARIABLES
+==================================== */
+:root {
+  --bg: #0d0b12;
+  --text: #e6e0ff;
+  --accent: #c9a8ff;
+  --card: #1a1625;
+  --button-bg: #ffffff;
+  --button-text: #1a1a1a;
+  --glow: 0 0 15px rgba(180, 120, 255, 0.6);
+}
+
+/* LIGHT MODE */
+.light-theme {
+  --bg: #f7f4ff;
+  --text: #1a1a1a;
+  --accent: #7a3cff;
+  --card: #ffffff;
+  --button-bg: #1a1a1a;
+  --button-text: #ffffff;
+  --glow: 0 0 10px rgba(120, 60, 255, 0.4);
+}
+
+/* Smooth theme fade */
+body {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ====================================
+   GLOBAL RESET
+==================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====================================
+   GLOBAL TYPOGRAPHY & LAYOUT
+==================================== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+/* ====================================
+   BUTTONS
+==================================== */
+button,
+.button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: var(--glow);
+}
+
+button:hover,
+.button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+/* ====================================
+   HEADER + NAVIGATION
+==================================== */
+.site-header {
+  background: var(--card);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(180, 120, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: var(--accent);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Desktop nav */
+.main-nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.main-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--accent);
+}
+
+/* ====================================
+   MOBILE MENU
+==================================== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  background: var(--card);
+  padding: 20px;
+  border-top: 1px solid rgba(180, 120, 255, 0.3);
+}
+
+.mobile-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobile-nav.show {
+    display: flex;
+  }
+}
+
+/* ====================================
+   FOOTER GLOW
+==================================== */
+.site-footer {
+  background: var(--card);
+  padding: 25px 0;
+  text-align: center;
+  box-shadow: 0 -5px 25px rgba(180, 120, 255, 0.4);
+}
+
+/* ====================================
+   ANIMATIONS
+==================================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====================================
+   HERO SLIDER
+==================================== */
+.slide-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.slide {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.slide:hover {
+  transform: scale(1.05);
+}
+
+/* ====================================
+   ABOUT PAGE
+==================================== */
+.two-column {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.two-column img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .two-column {
+    flex-direction: column;
+  }
+}
+
+/* ====================================
+   GALLERY PAGE
+==================================== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow);
+}
+
+/* ====================================
+   CONTACT PAGE
+==================================== */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(180, 120, 255, 0.3);
+  background: var(--card);
+  color: var(--text);
+}
+
+textarea {
+  height: 140px;
+}
+
